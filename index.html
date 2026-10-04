@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CFA Level III Portfolio Construction study dashboard – Fixed-Income Portfolio Management." />
+  <title>CFA LV3 Territory | Portfolio Construction</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">CFA</div>
+        <div>
+          <div class="eyebrow">STUDY TERRITORY</div>
+          <div class="brand-title">Level III</div>
+        </div>
+      </div>
+
+      <div class="side-section">
+        <div class="side-label">CFA LV3 Territory</div>
+        <button class="territory-item active">
+          <span class="territory-icon">◫</span>
+          <span>
+            <strong>Portfolio Construction</strong>
+            <small>Fixed Income • LM02</small>
+          </span>
+        </button>
+      </div>
+
+      <div class="side-section">
+        <div class="side-label">Module map</div>
+        <div class="module-list">
+          <span>01 • Roles & Mandates</span>
+          <span>02 • Risk Measures</span>
+          <span>03 • Liquidity</span>
+          <span>04 • Return Model</span>
+          <span>05 • Leverage & Tax</span>
+          <span>06 • LDI & Cash Flow Matching</span>
+          <span>07 • Laddered Portfolios</span>
+        </div>
+      </div>
+
+      <div class="sidebar-note">
+        <strong>Exam mindset</strong>
+        <p>Đừng học bond như một danh sách định nghĩa. Luôn đi theo flow: <b>mandate → risk → return → implementation → liability.</b></p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="hero">
+        <div>
+          <div class="breadcrumb">CFA LV3 Territory / <b>Portfolio Construction</b></div>
+          <h1>Overview of Fixed-Income Portfolio Management</h1>
+          <p class="hero-copy">Dashboard ôn tập trực quan: từ vai trò của bond, mandate, duration/convexity, liquidity, return decomposition, leverage & tax cho tới LDI, cash-flow matching và ladder.</p>
+        </div>
+        <div class="hero-badge">
+          <span class="badge-kicker">ONE-PAGE MENTAL MODEL</span>
+          <strong>Why bonds → Measure → Implement → Match liabilities</strong>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="Study sections">
+        <button class="tab active" data-tab="map">Mental Map</button>
+        <button class="tab" data-tab="mandates">Mandates</button>
+        <button class="tab" data-tab="risk">Risk & Liquidity</button>
+        <button class="tab" data-tab="return">Return & Leverage</button>
+        <button class="tab" data-tab="tax">Tax</button>
+        <button class="tab" data-tab="ldi">LDI & Ladder</button>
+        <button class="tab tab-accent" data-tab="exam">Exam Sheet</button>
+      </nav>
+
+      <section id="map" class="panel active">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">00 — BIG PICTURE</span>
+            <h2>Toàn bộ note gói trong 4 câu hỏi</h2>
+          </div>
+          <p>Học theo chuỗi quyết định sẽ nhớ lâu hơn học từng định nghĩa rời rạc.</p>
+        </div>
+
+        <div class="flow-grid">
+          <article class="flow-card">
+            <span class="step">01</span>
+            <h3>Why hold bonds?</h3>
+            <p>Diversification • Regular cash flow • Inflation protection</p>
+          </article>
+          <div class="flow-arrow">→</div>
+          <article class="flow-card">
+            <span class="step">02</span>
+            <h3>How do I measure?</h3>
+            <p>Duration • Convexity • Spread duration • DTS • Dispersion</p>
+          </article>
+          <div class="flow-arrow">→</div>
+          <article class="flow-card">
+            <span class="step">03</span>
+            <h3>How do I implement?</h3>
+            <p>Liquidity • ETFs • Derivatives • Leverage • Tax</p>
+          </article>
+          <div class="flow-arrow">→</div>
+          <article class="flow-card">
+            <span class="step">04</span>
+            <h3>What if I have liabilities?</h3>
+            <p>LDI • Cash-flow matching • Dedicated portfolio • Ladder</p>
+          </article>
+        </div>
+
+        <div class="grid-3 top-gap">
+          <article class="card">
+            <div class="card-icon">↔</div>
+            <h3>Diversification</h3>
+            <p>Fixed income thường có correlation thấp hơn 1 với equities và các risky assets khác. Trong stress, high yield có thể behave giống equity hơn.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">◷</div>
+            <h3>Regular cash flows</h3>
+            <p>Coupon + principal cho phép investor cover các nghĩa vụ đã biết trong tương lai — nền tảng cho liability-based investing.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">π</div>
+            <h3>Inflation hedge</h3>
+            <p><b>Fixed-rate:</b> không hedge. <b>Floating-rate:</b> hedge coupon một phần. <b>Inflation-linked:</b> tốt nhất vì coupon và principal cùng adjust.</p>
+          </article>
+        </div>
+
+        <div class="memory-strip">
+          <span>MEMORY HOOK</span>
+          <strong>Fixed income không chỉ là “yield”. Portfolio manager phải quan tâm <u>cash flow, sensitivity, liquidity và liability</u>.</strong>
+        </div>
+      </section>
+
+      <section id="mandates" class="panel">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">01 — MANDATES</span>
+            <h2>Liability-based vs Total-return</h2>
+          </div>
+          <p>Trước khi chọn bond, phải biết portfolio đang phục vụ mục tiêu gì.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card highlight">
+            <div class="pill">LIABILITY-BASED</div>
+            <h3>Future liability → construct assets</h3>
+            <p>Mục tiêu là giảm shortfall risk và mismatch giữa assets với liabilities.</p>
+            <div class="mini-list">
+              <div><b>Cash-flow matching</b><span>Match actual cash flows</span></div>
+              <div><b>Duration matching</b><span>Match interest-rate sensitivity</span></div>
+              <div><b>Contingent immunization</b><span>Active khi surplus đủ lớn, immunize khi cushion mất</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="pill neutral">TOTAL RETURN</div>
+            <h3>Track / outperform benchmark</h3>
+            <p>Mục tiêu là tạo return so với benchmark, chấp nhận active risk tùy mandate.</p>
+            <div class="spectrum">
+              <div><span>Pure Index</span><b>≈ 0 active risk</b></div>
+              <div><span>Enhanced Index</span><b>Small bets</b></div>
+              <div><span>Active</span><b>Large deviations</b></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="comparison-table top-gap">
+          <div class="row header"><span></span><span>Pure indexing</span><span>Enhanced indexing</span><span>Active management</span></div>
+          <div class="row"><b>Objective</b><span>Match benchmark</span><span>Modest outperformance</span><span>Higher outperformance</span></div>
+          <div class="row"><b>Risk factors</b><span>Match closely</span><span>Primary factors matched, especially duration</span><span>Can deviate materially</span></div>
+          <div class="row"><b>Portfolio weights</b><span>Very close</span><span>Small deviations</span><span>Significant deviations</span></div>
+          <div class="row"><b>Turnover</b><span>Low / benchmark-like</span><span>Slightly higher</span><span>Highest</span></div>
+        </div>
+
+        <div class="exam-callout">
+          <span>EXAM REFLEX</span>
+          <p>Portfolio có <b>duration lệch benchmark lớn</b> → nghĩ ngay <b>Active Management</b>. Primary risk factors gần benchmark nhưng có sector/quality bets → <b>Enhanced Indexing</b>.</p>
+        </div>
+      </section>
+
+      <section id="risk" class="panel">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">02 — RISK & LIQUIDITY</span>
+            <h2>Duration family + Convexity + Credit risk</h2>
+          </div>
+          <p>Đây là phần terminology dễ bị CFA đánh lừa nhất.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Duration cheat sheet</h3>
+            <div class="term-table">
+              <div><b>Macaulay</b><span>Weighted-average timing của cash flows</span></div>
+              <div><b>Modified</b><span>% price change khi YTM đổi</span></div>
+              <div><b>Effective</b><span>Dùng khi cash flow có thể thay đổi theo rates</span></div>
+              <div><b>Key-rate</b><span>Sensitivity tại từng segment của yield curve</span></div>
+              <div><b>Empirical</b><span>Estimate từ historical data / regression</span></div>
+              <div><b>Money duration</b><span>Price change tính bằng tiền</span></div>
+              <div><b>PVBP / DV01</b><span>Money change khi yield đổi 1 bp</span></div>
+            </div>
+          </article>
+
+          <article class="formula-card">
+            <span class="formula-label">FIRST ORDER</span>
+            <div class="formula">ΔP/P ≈ −D × Δy</div>
+            <p>Duration = slope của price–yield relationship quanh điểm hiện tại.</p>
+            <span class="formula-label top-gap-sm">SECOND ORDER</span>
+            <div class="formula">ΔP/P ≈ −DΔy + ½C(Δy)²</div>
+            <p>Convexity cải thiện approximation khi yield move lớn.</p>
+          </article>
+        </div>
+
+        <div class="grid-3 top-gap">
+          <article class="card">
+            <h3>Convexity</h3>
+            <p>Positive convexity có lợi: yield giảm → gain lớn hơn; yield tăng → loss nhỏ hơn so với duration-only.</p>
+            <div class="keyline">Convexity is valuable — but not free.</div>
+          </article>
+          <article class="card">
+            <h3>Spread Duration & DTS</h3>
+            <p>Spread duration đo sensitivity với credit spread.</p>
+            <div class="formula compact">DTS = Spread Duration × Spread</div>
+          </article>
+          <article class="card">
+            <h3>Dispersion</h3>
+            <p>Weighted variance của timing cash flows quanh duration. Cash flows càng dispersed → convexity càng cao.</p>
+          </article>
+        </div>
+
+        <div class="section-subtitle">Bond Market Liquidity</div>
+        <div class="liquidity-lanes">
+          <div class="lane good"><b>More liquid</b><span>Higher credit quality</span><span>Larger issue</span><span>Shorter maturity</span><span>Sovereign</span><span>On-the-run / recent issue</span></div>
+          <div class="lane bad"><b>Less liquid</b><span>Lower quality</span><span>Smaller issue</span><span>Longer maturity</span><span>Corporate</span><span>Off-the-run</span></div>
+        </div>
+
+        <div class="grid-2 top-gap">
+          <article class="card">
+            <h3>Matrix Pricing</h3>
+            <p>Bond ít trade → last price có thể stale. Ước tính price/yield bằng benchmark có maturity, duration, quality và sector tương tự.</p>
+          </article>
+          <article class="card">
+            <h3>Bid–Ask Spread</h3>
+            <p><b>Illiquidity ↑ + Risk ↑ + Complexity ↑ → Bid–ask spread ↑ → Trading cost ↑.</b></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="return" class="panel">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">03 — RETURN & LEVERAGE</span>
+            <h2>Bond return ≠ Yield</h2>
+          </div>
+          <p>Return decomposition là khung quan trọng nhất để đọc một fixed-income trade.</p>
+        </div>
+
+        <article class="formula-card hero-formula">
+          <span class="formula-label">EXPECTED RETURN</span>
+          <div class="formula multi">E(R) ≈ Coupon + Rolldown + ΔPrice<sub>rates</sub> + ΔPrice<sub>spread</sub> + ΔPrice<sub>FX</sub></div>
+        </article>
+
+        <div class="grid-5 top-gap">
+          <article class="mini-card"><b>Coupon</b><span>Current income</span></article>
+          <article class="mini-card"><b>Rolldown</b><span>Bond rolls down an unchanged curve</span></article>
+          <article class="mini-card"><b>Rates</b><span>Benchmark yield view</span></article>
+          <article class="mini-card"><b>Spread</b><span>Credit spread view</span></article>
+          <article class="mini-card"><b>FX</b><span>Foreign-currency impact</span></article>
+        </div>
+
+        <div class="grid-2 top-gap">
+          <article class="card">
+            <h3>Rolldown & pull-to-par</h3>
+            <p><b>Rolling yield = Coupon income + Rolldown.</b></p>
+            <div class="mini-list">
+              <div><b>Discount bond</b><span>Price tends to rise toward par</span></div>
+              <div><b>Premium bond</b><span>Price tends to fall toward par</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Return-model limitations</h3>
+            <ul>
+              <li>Duration + convexity chỉ là approximation.</li>
+              <li>Intermediate cash flows giả định reinvest theo YTM.</li>
+              <li>Bỏ qua local richness/cheapness.</li>
+              <li>Bỏ qua một số repo financing advantages.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="section-subtitle">Leverage</div>
+        <div class="grid-2">
+          <article class="formula-card">
+            <span class="formula-label">LEVERED RETURN</span>
+            <div class="formula">rₚ = rᵢ + (Vᵦ/Vₑ)(rᵢ − rᵦ)</div>
+            <p><b>rᵢ > rᵦ</b> → leverage adds return. <b>rᵢ < rᵦ</b> → leverage destroys return.</p>
+          </article>
+          <article class="card">
+            <h3>Ways to lever</h3>
+            <div class="chip-row"><span>Futures</span><span>Swaps</span><span>Repo</span><span>Securities Lending</span></div>
+            <p class="top-gap-sm">Common theme: gain large exposure with small initial capital/collateral.</p>
+          </article>
+        </div>
+
+        <div class="grid-3 top-gap">
+          <article class="card">
+            <h3>Interest-rate swap</h3>
+            <p><b>Rates ↑ → Pay fixed wins.</b><br/><b>Rates ↓ → Receive fixed wins.</b></p>
+          </article>
+          <article class="card">
+            <h3>Repo</h3>
+            <p>Sell security now + repurchase later = economically a <b>collateralized loan</b>.</p>
+          </article>
+          <article class="card">
+            <h3>Leverage risk</h3>
+            <p>Losses magnify; equity falls → leverage ratio rises → collateral pressure → forced liquidation / funding risk.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="tax" class="panel">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">04 — TAX</span>
+            <h2>Taxable investor: optimize after-tax return, not headline yield</h2>
+          </div>
+          <p>Tax có thể đảo ngược quyết định bán một bond dù investment view không đổi.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Sources of taxable return</h3>
+            <div class="mini-list">
+              <div><b>Interest income</b><span>Coupon / imputed interest</span></div>
+              <div><b>Capital gains/losses</b><span>Typically when realized</span></div>
+            </div>
+            <div class="keyline">Zero-coupon bond có thể bị tax trên imputed interest trước maturity.</div>
+          </article>
+          <article class="card highlight">
+            <div class="pill">TAX-LOSS HARVESTING</div>
+            <h3>Defer gains. Realize losses early.</h3>
+            <p>Losses có thể offset gains; trì hoãn realization của gain giúp capital compound lâu hơn trên pre-tax basis.</p>
+          </article>
+        </div>
+
+        <div class="exam-callout top-gap">
+          <span>CLASSIC EXAM TWIST</span>
+          <p><b>Tax-exempt:</b> bán security overvalued theo investment view. <b>Taxable:</b> có thể ưu tiên bán security đang có unrealized loss để lấy tax benefit, ngay cả khi nó hơi undervalued.</p>
+        </div>
+      </section>
+
+      <section id="ldi" class="panel">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">05 — LDI & LADDER</span>
+            <h2>Liability first. Assets follow.</h2>
+          </div>
+          <p>Đây là phần nối portfolio construction với actual obligations.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>ADL vs LDI</h3>
+            <div class="mini-list">
+              <div><b>ADL</b><span>Assets given → structure liabilities</span></div>
+              <div><b>LDI</b><span>Liabilities given → structure assets</span></div>
+            </div>
+            <div class="keyline">LDI = Liability is the boss.</div>
+          </article>
+
+          <article class="card">
+            <h3>4 liability types</h3>
+            <div class="matrix">
+              <div class="matrix-head"></div><div class="matrix-head">Timing known</div><div class="matrix-head">Timing uncertain</div>
+              <div class="matrix-side">Amount known</div><div class="matrix-cell"><b>Type I</b><small>Fixed-rate bond</small></div><div class="matrix-cell"><b>Type II</b><small>Deposit / callable</small></div>
+              <div class="matrix-side">Amount uncertain</div><div class="matrix-cell"><b>Type III</b><small>Floating-rate</small></div><div class="matrix-cell danger"><b>Type IV</b><small>DB pension / mortgage with prepay + default</small></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-subtitle">Cash-flow matching</div>
+        <div class="cashflow-flow">
+          <div><b>1</b><span>Start with last liability</span></div>
+          <span>→</span>
+          <div><b>2</b><span>Buy matching long bond</span></div>
+          <span>→</span>
+          <div><b>3</b><span>Use its earlier coupons</span></div>
+          <span>→</span>
+          <div><b>4</b><span>Reduce earlier liabilities</span></div>
+          <span>→</span>
+          <div><b>5</b><span>Repeat backward</span></div>
+        </div>
+
+        <div class="grid-3 top-gap">
+          <article class="card">
+            <h3>Dedicated portfolio</h3>
+            <p>Bonds được ring-fence / held to maturity để phục vụ liability cụ thể.</p>
+          </article>
+          <article class="card">
+            <h3>Cash-in-advance</h3>
+            <p>Asset cash phải có <b>on or before</b> liability date. Cash tới quá sớm → reinvestment risk.</p>
+          </article>
+          <article class="card">
+            <h3>Accounting defeasance</h3>
+            <p>Trong một số điều kiện, dedicated high-quality assets và matched debt liabilities có thể được remove khỏi balance sheet.</p>
+          </article>
+        </div>
+
+        <div class="section-subtitle">Ladder vs Bullet vs Barbell</div>
+        <div class="strategy-grid">
+          <article class="strategy-card">
+            <div class="maturity-viz bullet"><i></i><i></i><i></i></div>
+            <h3>Bullet</h3>
+            <p>Maturities concentrate quanh một point.</p>
+            <b>Steepening → tends to outperform</b>
+          </article>
+          <article class="strategy-card">
+            <div class="maturity-viz barbell"><i></i><i></i><i></i><i></i></div>
+            <h3>Barbell</h3>
+            <p>Concentrate ở short + long ends.</p>
+            <b>Flattening → tends to outperform</b>
+          </article>
+          <article class="strategy-card featured">
+            <div class="maturity-viz ladder"><i></i><i></i><i></i><i></i><i></i></div>
+            <h3>Ladder</h3>
+            <p>Maturities spread đều; bond mature → reinvest ở back end.</p>
+            <b>Diversification + liquidity + balanced risks</b>
+          </article>
+        </div>
+
+        <div class="grid-5 top-gap">
+          <article class="mini-card"><b>Diversification</b><span>Across yield curve</span></article>
+          <article class="mini-card"><b>Liquidity</b><span>Always a bond near maturity</span></article>
+          <article class="mini-card"><b>Balance</b><span>Price vs reinvestment risk</span></article>
+          <article class="mini-card"><b>Convexity</b><span>Cash flows dispersed</span></article>
+          <article class="mini-card"><b>Best setting</b><span>Stable upward-sloping curve</span></article>
+        </div>
+      </section>
+
+      <section id="exam" class="panel">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">06 — EXAM SHEET</span>
+            <h2>15 phản xạ phải có trước khi vào thi</h2>
+          </div>
+          <p>Tick từng mục khi bạn có thể giải thích lại mà không nhìn note.</p>
+        </div>
+
+        <div class="checklist" id="checklist">
+          <label><input type="checkbox" data-key="1"><span><b>1.</b> Liability-based ≠ Total-return mandate.</span></label>
+          <label><input type="checkbox" data-key="2"><span><b>2.</b> Pure index → Enhanced → Active = active risk tăng dần.</span></label>
+          <label><input type="checkbox" data-key="3"><span><b>3.</b> Modified = YTM sensitivity; Effective = changing CF; KRD = curve-shape risk.</span></label>
+          <label><input type="checkbox" data-key="4"><span><b>4.</b> PVBP / DV01 = money change per 1 bp.</span></label>
+          <label><input type="checkbox" data-key="5"><span><b>5.</b> Positive convexity is valuable, but not free.</span></label>
+          <label><input type="checkbox" data-key="6"><span><b>6.</b> DTS = Spread Duration × Spread.</span></label>
+          <label><input type="checkbox" data-key="7"><span><b>7.</b> Higher quality / bigger issue / shorter maturity → more liquid.</span></label>
+          <label><input type="checkbox" data-key="8"><span><b>8.</b> Illiquid bond + stale price → Matrix Pricing.</span></label>
+          <label><input type="checkbox" data-key="9"><span><b>9.</b> Bond expected return = Coupon + Rolldown + Rates + Spread + FX.</span></label>
+          <label><input type="checkbox" data-key="10"><span><b>10.</b> Leverage adds return only when investment return > funding cost.</span></label>
+          <label><input type="checkbox" data-key="11"><span><b>11.</b> Rates ↑ → pay fixed benefits; Rates ↓ → receive fixed benefits.</span></label>
+          <label><input type="checkbox" data-key="12"><span><b>12.</b> Taxable portfolio → defer gains, realize losses.</span></label>
+          <label><input type="checkbox" data-key="13"><span><b>13.</b> LDI = liability given → assets structured around it.</span></label>
+          <label><input type="checkbox" data-key="14"><span><b>14.</b> Cash-flow matching = work backward from last liability.</span></label>
+          <label><input type="checkbox" data-key="15"><span><b>15.</b> Steepening → Bullet; Flattening → Barbell; Ladder → diversified maturity structure.</span></label>
+        </div>
+
+        <div class="progress-card">
+          <div>
+            <span>Mastery progress</span>
+            <strong id="progressText">0 / 15</strong>
+          </div>
+          <div class="progress-track"><div id="progressBar"></div></div>
+        </div>
+
+        <div class="section-subtitle">Formula wall</div>
+        <div class="formula-wall">
+          <div><span>Duration</span><b>ΔP/P ≈ −DΔy</b></div>
+          <div><span>Duration + Convexity</span><b>ΔP/P ≈ −DΔy + ½C(Δy)²</b></div>
+          <div><span>DTS</span><b>Spread Duration × Spread</b></div>
+          <div><span>Rolling yield</span><b>Coupon + Rolldown</b></div>
+          <div><span>Expected FI return</span><b>Coupon + Rolldown + Rates + Spread + FX</b></div>
+          <div><span>Levered return</span><b>rₚ = rᵢ + (Vᵦ/Vₑ)(rᵢ − rᵦ)</b></div>
+          <div><span>Repo interest</span><b>Principal × Rate × Days/360</b></div>
+          <div><span>Rebate rate</span><b>Collateral earnings − Lending rate</b></div>
+        </div>
+
+        <div class="memory-strip">
+          <span>LAST-MINUTE FLOW</span>
+          <strong>Why bonds → Mandate → Risk → Liquidity → Return → Leverage/Tax → LDI → Cash-flow match → Ladder.</strong>
+        </div>
+      </section>
+
+      <footer>
+        <span>CFA LV3 Territory • Portfolio Construction</span>
+        <span>Study dashboard based on LM02 fixed-income portfolio management notes. Paraphrased for revision.</span>
+      </footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
